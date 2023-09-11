@@ -2,10 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000; // Choose a port number
 
-app.use(express.json());
-
 // Define your endpoint
-app.get("/get_info", (req, res) => {
+app.get("/get_intern_info", (req, res) => {
   // Get query parameters
   const slackName = req.query.slack_name || "";
   const track = req.query.track || "";
@@ -22,11 +20,10 @@ app.get("/get_info", (req, res) => {
 
   // Get the GitHub URL of the file being run
   const fileGithubUrl =
-    "https://github.com/YourGitHubUsername/YourRepository/blob/main/app.js"; // Replace with your GitHub URL
+    "https://github.com/sheriff-o/express_backend/blob/main/app.js";
 
   // Get the GitHub URL of the full source code
-  const fullSourceCodeUrl =
-    "https://github.com/YourGitHubUsername/YourRepository"; // Replace with your GitHub URL
+  const fullSourceCodeUrl = "https://github.com/sheriff-o/express_backend";
 
   // Create a response JSON
   const response = {
@@ -40,23 +37,6 @@ app.get("/get_info", (req, res) => {
   };
 
   res.json(response);
-});
-
-app.post("/person", (req, res) => {
-  console.log(req.body);
-  return res.json({
-    message: "This is your data",
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-});
-
-app.get("/persons/:first", (req, res) => {
-  console.log(req.params);
-  return res.json({
-    myparams: req.params.first,
-  });
 });
 
 // Start the server
