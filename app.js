@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // Choose a port number
+const port = 5000; // Choose a port number
 
 // Define your endpoint
 app.get("/get_intern_info", (req, res) => {
