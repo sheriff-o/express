@@ -19,11 +19,10 @@ app.get("/get_intern_info", (req, res) => {
   const currentTime = isWithinTwoHours ? new Date().toISOString() : null;
 
   // Get the GitHub URL of the file being run
-  const fileGithubUrl =
-    "https://github.com/sheriff-o/express_backend/blob/main/app.js";
+  const fileGithubUrl = "https://github.com/sheriff-o/express/blob/main/app.js";
 
   // Get the GitHub URL of the full source code
-  const fullSourceCodeUrl = "https://github.com/sheriff-o/express_backend";
+  const fullSourceCodeUrl = "https://github.com/sheriff-o/express";
 
   // Create a response JSON
   const response = {
