@@ -33,7 +33,7 @@ app.get("/get_intern_info", (req, res) => {
     track: track,
     github_file_url: fileGithubUrl,
     github_repo_url: fullSourceCodeUrl,
-    status_code: 200,
+    status_code: "success",
   };
 
   res.json(response);
